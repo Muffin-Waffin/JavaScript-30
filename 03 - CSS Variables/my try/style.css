@@ -1,0 +1,36 @@
+:root{
+    --base: #ffc600;
+    --blur: 10px;
+    --spacing : 10px;
+    --font-size :40px;
+}
+
+html{
+    background-color: #193549;
+    color: white;
+    font-size: 50px;
+    font-weight: 100;
+    font-family: 'helvetica neue', sans-serif;
+    text-align: center;
+}
+.js{
+    color: var(--base);
+    font-size: var(--font-size);
+}
+.options{
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+#favcolor{
+    width: 100px;
+    margin-bottom: 10px;
+}
+img{
+    margin-top: 50px;
+    filter: blur(var(--blur));
+    padding: var(--spacing);
+    background: var(--base);
+}

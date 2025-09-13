@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Variables and JS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="Container">
+        <!-- <div class="heading"> -->
+            <h2>Update CSS Variables with <span class ="js"> JS </span></h2>
+        <!-- </div> -->
+        <div class="options">
+            <div class="spacing"><span>Spacing:</span>
+                <input name="spacing" type="range" min="1" max="100" value="50" class="slider" id="myRange" data-sizing="px">
+            </div>
+            <div class="blur"><span>Blur:</span>
+                <input name="blur" type="range" min="1" max="100" value="50" class="slider" id="myRange" data-sizing="px">
+            </div>
+            <div class="color"><span>Base Color</span>
+                <input name="base" type="color" id="favcolor" value="#ff0000">
+            </div>
+            <div class="font"><span>Font Size</span>
+                <input name="font-size" type="range" min="1" max="200" value="50" class="slider" id="myRange" data-sizing="px">
+            </div>
+        </div>
+        <!-- <div class="image_container"> -->
+            <img src="https://media.istockphoto.com/id/814423752/photo/eye-of-model-with-colorful-art-make-up-close-up.jpg?s=612x612&w=0&k=20&c=l15OdMWjgCKycMMShP8UK94ELVlEGvt7GmB_esHWPYE=">
+        <!-- </div> -->
+    </div>
+
+
+    <script>
+        const input = document.querySelectorAll(".options input");
+
+        function Update(){
+            const suffix = this.dataset.sizing || "";
+            document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
+
+            // console.log(this.value);
+        }
+
+        input.forEach(input => input.addEventListener("change" , Update));
+        input.forEach(input => input.addEventListener("mousemove" , Update));
+    </script>
+</body>
+</html>
